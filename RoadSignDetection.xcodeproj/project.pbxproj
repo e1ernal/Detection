@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDAF5DE22A40E51B00A48A91 /* MainVC+MLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF5DE12A40E51B00A48A91 /* MainVC+MLModel.swift */; };
+		EDF0D4322A3F2FD200B2F98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D4312A3F2FD200B2F98E /* AppDelegate.swift */; };
+		EDF0D4342A3F2FD200B2F98E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D4332A3F2FD200B2F98E /* SceneDelegate.swift */; };
+		EDF0D4362A3F2FD200B2F98E /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D4352A3F2FD200B2F98E /* MainVC.swift */; };
+		EDF0D43B2A3F2FD300B2F98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF0D43A2A3F2FD300B2F98E /* Assets.xcassets */; };
+		EDF0D43E2A3F2FD300B2F98E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF0D43C2A3F2FD300B2F98E /* LaunchScreen.storyboard */; };
+		EDF0D4472A3F33A600B2F98E /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D4462A3F33A600B2F98E /* InfoVC.swift */; };
+		EDF0D44A2A3F3BAD00B2F98E /* SignInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D4492A3F3BAD00B2F98E /* SignInfoCell.swift */; };
+		EDF0D44D2A3F51CA00B2F98E /* Signs.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D44C2A3F51CA00B2F98E /* Signs.swift */; };
+		EDF0D44F2A3F797D00B2F98E /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D44E2A3F797D00B2F98E /* AboutVC.swift */; };
+		EDF0D4512A3F7F8F00B2F98E /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D4502A3F7F8F00B2F98E /* About.swift */; };
+		EDF0D4532A3F953C00B2F98E /* SignDetectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D4522A3F953C00B2F98E /* SignDetectionCell.swift */; };
+		EDF3D81A2A40851600507283 /* MainVC+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3D8192A40851600507283 /* MainVC+NavigationBar.swift */; };
+		EDF3D81C2A40859E00507283 /* MainVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3D81B2A40859E00507283 /* MainVC+TableView.swift */; };
+		EDF3D81E2A4085FF00507283 /* MainVC+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3D81D2A4085FF00507283 /* MainVC+ImagePicker.swift */; };
+		EDF3D8202A4086EC00507283 /* InfoVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3D81F2A4086EC00507283 /* InfoVC+TableView.swift */; };
+		EDF3D8262A4087B300507283 /* AboutVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3D8252A4087B300507283 /* AboutVC+TableView.swift */; };
+		EDF3D8282A40881700507283 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3D8272A40881700507283 /* Extensions.swift */; };
+		EDF3D82A2A4090EB00507283 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF3D8292A4090EB00507283 /* Enums.swift */; };
+		EDF3D82C2A409FB600507283 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EDF3D82B2A409FB600507283 /* ObjectDetector.mlmodel */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EDAF5DE12A40E51B00A48A91 /* MainVC+MLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+MLModel.swift"; sourceTree = "<group>"; };
+		EDF0D42E2A3F2FD200B2F98E /* RoadSignDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadSignDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF0D4312A3F2FD200B2F98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDF0D4332A3F2FD200B2F98E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EDF0D4352A3F2FD200B2F98E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		EDF0D43A2A3F2FD300B2F98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDF0D43D2A3F2FD300B2F98E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDF0D43F2A3F2FD300B2F98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDF0D4462A3F33A600B2F98E /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		EDF0D4492A3F3BAD00B2F98E /* SignInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInfoCell.swift; sourceTree = "<group>"; };
+		EDF0D44C2A3F51CA00B2F98E /* Signs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signs.swift; sourceTree = "<group>"; };
+		EDF0D44E2A3F797D00B2F98E /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		EDF0D4502A3F7F8F00B2F98E /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		EDF0D4522A3F953C00B2F98E /* SignDetectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetectionCell.swift; sourceTree = "<group>"; };
+		EDF3D8192A40851600507283 /* MainVC+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+NavigationBar.swift"; sourceTree = "<group>"; };
+		EDF3D81B2A40859E00507283 /* MainVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+TableView.swift"; sourceTree = "<group>"; };
+		EDF3D81D2A4085FF00507283 /* MainVC+ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+ImagePicker.swift"; sourceTree = "<group>"; };
+		EDF3D81F2A4086EC00507283 /* InfoVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InfoVC+TableView.swift"; sourceTree = "<group>"; };
+		EDF3D8252A4087B300507283 /* AboutVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AboutVC+TableView.swift"; sourceTree = "<group>"; };
+		EDF3D8272A40881700507283 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EDF3D8292A4090EB00507283 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		EDF3D82B2A409FB600507283 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetector.mlmodel; path = ../../../../../Downloads/ObjectDetector.mlmodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDF0D42B2A3F2FD200B2F98E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDF0D4252A3F2FD200B2F98E = {
+			isa = PBXGroup;
+			children = (
+				EDF0D4302A3F2FD200B2F98E /* RoadSignDetection */,
+				EDF0D42F2A3F2FD200B2F98E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDF0D42F2A3F2FD200B2F98E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDF0D42E2A3F2FD200B2F98E /* RoadSignDetection.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDF0D4302A3F2FD200B2F98E /* RoadSignDetection */ = {
+			isa = PBXGroup;
+			children = (
+				EDF0D44B2A3F51B800B2F98E /* Model */,
+				EDF0D4482A3F3B9200B2F98E /* View */,
+				EDF0D4452A3F305800B2F98E /* Controllers */,
+				EDF3D8182A4084C600507283 /* Extensions */,
+				EDF0D4312A3F2FD200B2F98E /* AppDelegate.swift */,
+				EDF0D4332A3F2FD200B2F98E /* SceneDelegate.swift */,
+				EDF0D43A2A3F2FD300B2F98E /* Assets.xcassets */,
+				EDF0D43C2A3F2FD300B2F98E /* LaunchScreen.storyboard */,
+				EDF0D43F2A3F2FD300B2F98E /* Info.plist */,
+			);
+			path = RoadSignDetection;
+			sourceTree = "<group>";
+		};
+		EDF0D4452A3F305800B2F98E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDF0D4352A3F2FD200B2F98E /* MainVC.swift */,
+				EDF0D4462A3F33A600B2F98E /* InfoVC.swift */,
+				EDF0D44E2A3F797D00B2F98E /* AboutVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EDF0D4482A3F3B9200B2F98E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDF0D4492A3F3BAD00B2F98E /* SignInfoCell.swift */,
+				EDF0D4522A3F953C00B2F98E /* SignDetectionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDF0D44B2A3F51B800B2F98E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDF0D44C2A3F51CA00B2F98E /* Signs.swift */,
+				EDF0D4502A3F7F8F00B2F98E /* About.swift */,
+				EDF3D8292A4090EB00507283 /* Enums.swift */,
+				EDF3D82B2A409FB600507283 /* ObjectDetector.mlmodel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EDF3D8182A4084C600507283 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EDF3D8192A40851600507283 /* MainVC+NavigationBar.swift */,
+				EDF3D81B2A40859E00507283 /* MainVC+TableView.swift */,
+				EDF3D81D2A4085FF00507283 /* MainVC+ImagePicker.swift */,
+				EDF3D81F2A4086EC00507283 /* InfoVC+TableView.swift */,
+				EDF3D8252A4087B300507283 /* AboutVC+TableView.swift */,
+				EDAF5DE12A40E51B00A48A91 /* MainVC+MLModel.swift */,
+				EDF3D8272A40881700507283 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDF0D42D2A3F2FD200B2F98E /* RoadSignDetection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF0D4422A3F2FD300B2F98E /* Build configuration list for PBXNativeTarget "RoadSignDetection" */;
+			buildPhases = (
+				EDF0D42A2A3F2FD200B2F98E /* Sources */,
+				EDF0D42B2A3F2FD200B2F98E /* Frameworks */,
+				EDF0D42C2A3F2FD200B2F98E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoadSignDetection;
+			productName = RoadSignDetection;
+			productReference = EDF0D42E2A3F2FD200B2F98E /* RoadSignDetection.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDF0D4262A3F2FD200B2F98E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					EDF0D42D2A3F2FD200B2F98E = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = EDF0D4292A3F2FD200B2F98E /* Build configuration list for PBXProject "RoadSignDetection" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDF0D4252A3F2FD200B2F98E;
+			productRefGroup = EDF0D42F2A3F2FD200B2F98E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDF0D42D2A3F2FD200B2F98E /* RoadSignDetection */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDF0D42C2A3F2FD200B2F98E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF0D43E2A3F2FD300B2F98E /* LaunchScreen.storyboard in Resources */,
+				EDF0D43B2A3F2FD300B2F98E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDF0D42A2A3F2FD200B2F98E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF0D44F2A3F797D00B2F98E /* AboutVC.swift in Sources */,
+				EDF3D81E2A4085FF00507283 /* MainVC+ImagePicker.swift in Sources */,
+				EDF3D8202A4086EC00507283 /* InfoVC+TableView.swift in Sources */,
+				EDF3D8282A40881700507283 /* Extensions.swift in Sources */,
+				EDF3D8262A4087B300507283 /* AboutVC+TableView.swift in Sources */,
+				EDF0D4512A3F7F8F00B2F98E /* About.swift in Sources */,
+				EDF0D4532A3F953C00B2F98E /* SignDetectionCell.swift in Sources */,
+				EDF0D4472A3F33A600B2F98E /* InfoVC.swift in Sources */,
+				EDF3D82C2A409FB600507283 /* ObjectDetector.mlmodel in Sources */,
+				EDF0D44A2A3F3BAD00B2F98E /* SignInfoCell.swift in Sources */,
+				EDF0D44D2A3F51CA00B2F98E /* Signs.swift in Sources */,
+				EDF0D4362A3F2FD200B2F98E /* MainVC.swift in Sources */,
+				EDAF5DE22A40E51B00A48A91 /* MainVC+MLModel.swift in Sources */,
+				EDF0D4322A3F2FD200B2F98E /* AppDelegate.swift in Sources */,
+				EDF0D4342A3F2FD200B2F98E /* SceneDelegate.swift in Sources */,
+				EDF3D81C2A40859E00507283 /* MainVC+TableView.swift in Sources */,
+				EDF3D82A2A4090EB00507283 /* Enums.swift in Sources */,
+				EDF3D81A2A40851600507283 /* MainVC+NavigationBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EDF0D43C2A3F2FD300B2F98E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF0D43D2A3F2FD300B2F98E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDF0D4402A3F2FD300B2F98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDF0D4412A3F2FD300B2F98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDF0D4432A3F2FD300B2F98E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6AB7TG5AU6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoadSignDetection/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = e1ernal.RoadSignDetection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDF0D4442A3F2FD300B2F98E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6AB7TG5AU6;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoadSignDetection/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = e1ernal.RoadSignDetection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDF0D4292A3F2FD200B2F98E /* Build configuration list for PBXProject "RoadSignDetection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF0D4402A3F2FD300B2F98E /* Debug */,
+				EDF0D4412A3F2FD300B2F98E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDF0D4422A3F2FD300B2F98E /* Build configuration list for PBXNativeTarget "RoadSignDetection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF0D4432A3F2FD300B2F98E /* Debug */,
+				EDF0D4442A3F2FD300B2F98E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDF0D4262A3F2FD200B2F98E /* Project object */;
+}
