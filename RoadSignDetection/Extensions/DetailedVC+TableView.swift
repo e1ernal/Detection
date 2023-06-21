@@ -44,7 +44,7 @@ extension DetailedVC: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.signDetection.getId,
                                                      for: indexPath) as! SignDetectionCell
             
-            cell.setupCell(image: signImages[indexPath.row])
+            cell.setupCell(image: signImages[indexPath.section])
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: Cell.detailedCell.getId,

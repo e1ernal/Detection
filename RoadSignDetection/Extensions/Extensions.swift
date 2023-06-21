@@ -50,6 +50,8 @@ extension Array {
 //MARK: Draw rectangle on image
 final class Draw {
     static func rectangles(image: UIImage, boundingBoxes: [CGRect], texts: [String]) -> UIImage {
+        print("Box2: \(boundingBoxes)")
+        
         let imageSize = image.size
         let scale: CGFloat = 0
         UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
