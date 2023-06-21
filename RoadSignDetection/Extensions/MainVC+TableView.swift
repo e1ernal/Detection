@@ -34,7 +34,15 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if signsCount == 0 {
+            return 1
+        } else {
+            switch section {
+            case 0: return 2
+            case 1: return 1
+            default: return 0
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,68 +51,95 @@ extension MainVC: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.section {
         case sectionImageNumber:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.signDetection.getId,
-                                                     for: indexPath) as! SignDetectionCell
-            guard let image = signImage else { return cell }
-            cell.setupCell(image: image)
-            return cell
-        case sectionButtonNumber:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.regular.getId,
-                                                     for: indexPath)
-            cell.textLabel?.text = "Select Image"
-            cell.imageView?.image = UIImage(systemName: "rectangle.badge.plus")
-            cell.textLabel?.textColor = .systemBlue
-            return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Cell.regular.getId,
-                                                     for: indexPath)
-            return cell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section:Int) -> String? {
-        let sectionNumber = isImage ? 0 : 1
-        switch section {
-        case sectionNumber:
-            return "Selected image for recognition"
-        default:
-            return "Take a photo or choose from the gallery"
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        let sectionImageNumber = isImage ? 0 : 1
-        let sectionButtonNumber = isImage ? 1 : 0
-        
-        switch section {
-        case sectionButtonNumber:
-            return "Square images are preferred. Objects in the photo must be at least 10% of the size of the image"
-        case sectionImageNumber:
-            return "Signs found: \(signsCount)"
-        default:
-            return ""
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        let screenSize: CGRect = UIScreen.main.bounds
-        var height: CGFloat = CGFloat()
-        if indexPath.section == 0 && indexPath.row == 0 && isImage {
-            height = screenSize.width
-            return height
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.signDetection.getId,
+                                                         for: indexPath) as! SignDetectionCell
+                cell.setupCell(image: signImage)
+                return cell
+            case 1:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.regular.getId,
+                                                         for: indexPath)
+                cell.textLabel?.text = "Detailed information"
+                cell.imageView?.image = UIImage(systemName: "info.circle")
+                cell.textLabel?.textColor = .systemBlue
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.regular.getId,
+                                                         for: indexPath)
+                return cell
+            }
+            case sectionButtonNumber:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.regular.getId,
+                                                         for: indexPath)
+                cell.textLabel?.text = "Select Image"
+                cell.imageView?.image = UIImage(systemName: "rectangle.badge.plus")
+                cell.textLabel?.textColor = .systemBlue
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: Cell.regular.getId,
+                                                         for: indexPath)
+                return cell
+            }
         }
         
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        func tableView(_ tableView: UITableView, titleForHeaderInSection section:Int) -> String? {
+            let sectionNumber = isImage ? 0 : 1
+            switch section {
+            case sectionNumber:
+                return "Selected image for recognition"
+            default:
+                return "Take a photo or choose from the gallery"
+            }
+            
+        }
         
-        let sectionNumber = isImage ? 1 : 0
-        if indexPath.section == sectionNumber && indexPath.row == 0 {
-            showImagePickerControllerActionSheet()
+        func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+            let sectionImageNumber = isImage ? 0 : 1
+            let sectionButtonNumber = isImage ? 1 : 0
+            
+            switch section {
+            case sectionButtonNumber:
+                return "Square images are preferred. Objects in the photo must be at least 10% of the size of the image"
+            case sectionImageNumber:
+                return "Signs found: \(signsCount)"
+            default:
+                return ""
+            }
+        }
+        
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            
+            let screenSize: CGRect = UIScreen.main.bounds
+            var height: CGFloat = CGFloat()
+            if indexPath.section == 0 && indexPath.row == 0 && isImage {
+                height = screenSize.width
+                return height
+            }
+            
+            return UITableView.automaticDimension
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let sectionSelectImage = isImage ? 1 : 0
+            let sectionDetailedInformation = isImage ? 0 : 1
+            
+            switch indexPath.section {
+            case sectionSelectImage:
+                if indexPath.row == 0 {
+                    showImagePickerControllerActionSheet()
+                }
+            case sectionDetailedInformation:
+                if indexPath.row == 1 {
+                    let nextVC = DetailedVC()
+                    nextVC.signs = signs
+                    nextVC.originalImage = originalImage
+                    navigationController?.present(UINavigationController(rootViewController: nextVC),
+                                                  animated: true)
+                }
+            default:
+                return
+            }
         }
     }
-}

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 import UIKit
 
 final class SignDetectionCell: UITableViewCell {
@@ -26,9 +25,12 @@ final class SignDetectionCell: UITableViewCell {
             signImage.topAnchor.constraint(equalTo: contentView.topAnchor),
             signImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
         ])
+        
+        self.selectionStyle = .none
     }
     
-    func setupCell(image: UIImage) {
+    func setupCell(image: UIImage?) {
+        guard let image = image else { return }
         signImage.image = image
     }
     

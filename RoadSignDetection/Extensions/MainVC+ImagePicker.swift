@@ -22,7 +22,7 @@ extension MainVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
         let clearAction = UIAlertAction(title: "Clear current photo",
                                         style: .destructive) { (action) in
             self.isImage = false
-            self.signImage = nil
+            self.signImage = UIImage()
             self.signsCount = 0
             self.signTableView.reloadData()
         }
@@ -52,7 +52,8 @@ extension MainVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
         if let editedImage = info[.editedImage] as? UIImage {
             isImage = true
             signImage = editedImage
-            signTableView.reloadData()
+            originalImage = editedImage
+            showActivityIndicator()
             updateDetections(for: editedImage)
         }
         

@@ -24,7 +24,6 @@ final class SignInfoCell: UITableViewCell {
         return label
     }()
     
-    
     private let signImage = UIImageView()
     
     private lazy var nameStack: UIStackView = {
@@ -55,6 +54,8 @@ final class SignInfoCell: UITableViewCell {
             nameStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             nameStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
+        
+        self.selectionStyle = .none
     }
     
     func setupCell(name: String, definition: String, imageName: String) {

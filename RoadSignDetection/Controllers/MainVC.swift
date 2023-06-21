@@ -12,9 +12,12 @@ import Vision
 class MainVC: UIViewController {
     
     lazy var signTableView = UITableView(frame: .zero, style: .insetGrouped)
+    var activityView: UIActivityIndicatorView?
     var isImage: Bool = false
-    var signImage: UIImage?
+    var signImage: UIImage = UIImage()
+    var originalImage: UIImage = UIImage()
     var signsCount: Int = 0
+    var signs: [VNRecognizedObjectObservation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,4 +46,17 @@ class MainVC: UIViewController {
             fatalError("Failed to load Vision ML model: \(error)")
         }
     }()
+    
+    func showActivityIndicator() {
+        activityView = UIActivityIndicatorView(style: .large)
+        activityView?.center = self.view.center
+        self.view.addSubview(activityView!)
+        activityView?.startAnimating()
+    }
+
+    func hideActivityIndicator(){
+        if (activityView != nil){
+            activityView?.stopAnimating()
+        }
+    }
 }

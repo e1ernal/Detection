@@ -12,6 +12,7 @@ enum Cell {
     case regular
     case signInfo
     case signDetection
+    case detailedCell
     
     var getId: String {
         switch self {
@@ -21,6 +22,8 @@ enum Cell {
             return "signInfoCell"
         case .signDetection:
             return "signDetection"
+        case .detailedCell:
+            return "detailedCell"
         }
     }
     
@@ -32,6 +35,8 @@ enum Cell {
             return SignInfoCell.self
         case .signDetection:
             return SignDetectionCell.self
+        case .detailedCell:
+            return DetailedCell.self
         }
     }
 }

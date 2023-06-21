@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED9303642A42E59D00169BD1 /* DetailedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9303632A42E59D00169BD1 /* DetailedVC.swift */; };
+		ED9303662A42E78D00169BD1 /* DetailedVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9303652A42E78D00169BD1 /* DetailedVC+TableView.swift */; };
+		ED9303682A4308FB00169BD1 /* DetailedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9303672A4308FB00169BD1 /* DetailedCell.swift */; };
 		EDAF5DE22A40E51B00A48A91 /* MainVC+MLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAF5DE12A40E51B00A48A91 /* MainVC+MLModel.swift */; };
 		EDF0D4322A3F2FD200B2F98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D4312A3F2FD200B2F98E /* AppDelegate.swift */; };
 		EDF0D4342A3F2FD200B2F98E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D4332A3F2FD200B2F98E /* SceneDelegate.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED9303632A42E59D00169BD1 /* DetailedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedVC.swift; sourceTree = "<group>"; };
+		ED9303652A42E78D00169BD1 /* DetailedVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedVC+TableView.swift"; sourceTree = "<group>"; };
+		ED9303672A4308FB00169BD1 /* DetailedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCell.swift; sourceTree = "<group>"; };
 		EDAF5DE12A40E51B00A48A91 /* MainVC+MLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+MLModel.swift"; sourceTree = "<group>"; };
 		EDF0D42E2A3F2FD200B2F98E /* RoadSignDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadSignDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF0D4312A3F2FD200B2F98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 				EDF0D4352A3F2FD200B2F98E /* MainVC.swift */,
 				EDF0D4462A3F33A600B2F98E /* InfoVC.swift */,
 				EDF0D44E2A3F797D00B2F98E /* AboutVC.swift */,
+				ED9303632A42E59D00169BD1 /* DetailedVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 			children = (
 				EDF0D4492A3F3BAD00B2F98E /* SignInfoCell.swift */,
 				EDF0D4522A3F953C00B2F98E /* SignDetectionCell.swift */,
+				ED9303672A4308FB00169BD1 /* DetailedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,9 +141,10 @@
 				EDF3D8192A40851600507283 /* MainVC+NavigationBar.swift */,
 				EDF3D81B2A40859E00507283 /* MainVC+TableView.swift */,
 				EDF3D81D2A4085FF00507283 /* MainVC+ImagePicker.swift */,
+				EDAF5DE12A40E51B00A48A91 /* MainVC+MLModel.swift */,
 				EDF3D81F2A4086EC00507283 /* InfoVC+TableView.swift */,
 				EDF3D8252A4087B300507283 /* AboutVC+TableView.swift */,
-				EDAF5DE12A40E51B00A48A91 /* MainVC+MLModel.swift */,
+				ED9303652A42E78D00169BD1 /* DetailedVC+TableView.swift */,
 				EDF3D8272A40881700507283 /* Extensions.swift */,
 			);
 			path = Extensions;
@@ -211,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9303662A42E78D00169BD1 /* DetailedVC+TableView.swift in Sources */,
 				EDF0D44F2A3F797D00B2F98E /* AboutVC.swift in Sources */,
 				EDF3D81E2A4085FF00507283 /* MainVC+ImagePicker.swift in Sources */,
 				EDF3D8202A4086EC00507283 /* InfoVC+TableView.swift in Sources */,
@@ -228,7 +238,9 @@
 				EDF0D4342A3F2FD200B2F98E /* SceneDelegate.swift in Sources */,
 				EDF3D81C2A40859E00507283 /* MainVC+TableView.swift in Sources */,
 				EDF3D82A2A4090EB00507283 /* Enums.swift in Sources */,
+				ED9303682A4308FB00169BD1 /* DetailedCell.swift in Sources */,
 				EDF3D81A2A40851600507283 /* MainVC+NavigationBar.swift in Sources */,
+				ED9303642A42E59D00169BD1 /* DetailedVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

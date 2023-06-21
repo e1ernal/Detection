@@ -27,6 +27,7 @@ extension AboutVC: UITableViewDelegate, UITableViewDataSource {
         aboutTableView.register(Cell.regular.getClass, forCellReuseIdentifier: Cell.regular.getId)
         
         sections = Sections.getSections()
+        aboutTableView.allowsSelection = false
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
