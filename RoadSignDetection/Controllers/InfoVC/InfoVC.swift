@@ -8,10 +8,9 @@
 import UIKit
 
 class InfoVC: UIViewController {
-    
     lazy var infoTableView = UITableView(frame: .zero, style: .insetGrouped)
     var signs: [Sign] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar(title: "Information",

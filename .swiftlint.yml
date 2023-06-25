@@ -1,0 +1,85 @@
+included:
+  - Plugins
+  - Source
+  - Tests
+  - /Users/e1ernal/Documents/iOS Dev/RoadSignDetection
+excluded:
+  - Tests/SwiftLintFrameworkTests/Resources
+analyzer_rules:
+  - unused_declaration
+  - unused_import
+opt_in_rules:
+  - all
+disabled_rules:
+  - unused_setter_value
+  - file_length
+  - valid_ibinspectable
+  - shorthand_operator
+  - file_header
+  - discarded_notification_center_observer
+  - empty_enum_arguments
+  - prohibited_super_call
+  - trailing_whitespace
+  - object_literal
+  - explicit_acl
+  - explicit_top_level_acl
+  - required_deinit
+  - explicit_type_interface
+  - multiline_arguments_brackets
+  - indentation_width
+  - implicit_return
+  - no_magic_numbers
+  - multiline_parameters_brackets
+  - discouraged_optional_collection
+  - sorted_enum_cases
+  - vertical_whitespace_between_cases
+  - file_types_order
+  - conditional_returns_on_newline
+  - type_contents_order
+  - file_name
+
+line_length:
+  warning: 120
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
+
+attributes:
+  always_on_line_above:
+    - "@OptionGroup"
+identifier_name:
+  excluded:
+    - id
+large_tuple: 3
+number_separator:
+  minimum_length: 5
+
+balanced_xctest_lifecycle: &unit_test_configuration
+  test_parent_classes:
+    - SwiftLintTestCase
+    - XCTestCase
+empty_xctest_method: *unit_test_configuration
+single_test_class: *unit_test_configuration
+
+function_body_length: 100
+type_body_length: 400
+
+custom_rules:
+  rule_id:
+    included: Source/SwiftLintBuiltInRules/Rules/.+/\w+\.swift
+    name: Rule ID
+    message: Rule IDs must be all lowercase, snake case and not end with `rule`
+    regex: ^\s+identifier:\s*("\w+_rule"|"\S*[^a-z_]\S*")
+    severity: error
+  rule_test_function:
+    included: Tests/SwiftLintFrameworkTests/RulesTests.swift
+    name: Rule Test Function
+    message: Rule Test Function mustn't end with `rule`
+    regex: func\s*test\w+(r|R)ule\(\)
+    severity: error
+
+unused_import:
+  always_keep_imports:
+    - SwiftSyntaxBuilder # we can't detect uses of string interpolation of swift syntax nodes
+    - SwiftLintFramework # now that this is a wrapper around other modules, don't treat as unused

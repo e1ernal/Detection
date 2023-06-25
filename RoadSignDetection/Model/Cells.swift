@@ -1,5 +1,5 @@
 //
-//  Enums.swift
+//  Cells.swift
 //  RoadSignDetection
 //
 //  Created by e1ernal on 19.06.2023.
@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-enum Cell {
+enum Cells {
     case regular
     case signInfo
     case signDetection
     case detailedCell
-    
+
     var getId: String {
         switch self {
         case .regular:
@@ -26,7 +26,7 @@ enum Cell {
             return "detailedCell"
         }
     }
-    
+
     var getClass: AnyClass {
         switch self {
         case .regular:

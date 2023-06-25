@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 final class SignInfoCell: UITableViewCell {
-    
     private let signName: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 15)
@@ -64,6 +63,7 @@ final class SignInfoCell: UITableViewCell {
         signImage.image = UIImage(named: imageName)
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

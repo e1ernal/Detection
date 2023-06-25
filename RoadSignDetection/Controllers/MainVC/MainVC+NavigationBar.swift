@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 extension MainVC {
-    
-    @objc func infoTapped() {
+    @objc
+    func infoTapped() {
         let nextVC = InfoVC()
         navigationController?.present(UINavigationController(rootViewController: nextVC),
                                       animated: true)
     }
-    
+
     func setupActions() {
         let infoButton = UIBarButtonItem(image: UIImage(systemName: "questionmark.circle"),
                                          style: .plain,

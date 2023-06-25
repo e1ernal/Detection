@@ -10,12 +10,11 @@ import UIKit
 import Vision
 
 class DetailedVC: UIViewController {
-    
     lazy var infoTableView = UITableView(frame: .zero, style: .insetGrouped)
     var signs: [VNRecognizedObjectObservation] = []
     var originalImage = UIImage()
     var signImages: [UIImage?] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar(title: "Detailed information",
@@ -23,14 +22,12 @@ class DetailedVC: UIViewController {
         drawSignImages()
         setupTableView()
     }
-}
-
-extension DetailedVC {
+    
     func drawSignImages() {
         for sign in signs {
             let signImage = Draw.rectangles(image: originalImage,
-                                           boundingBoxes: [sign.boundingBox],
-                                           texts: [sign.labels[0].identifier.mlModelLabel()])
+                                            boundingBoxes: [sign.boundingBox],
+                                            texts: [sign.labels[0].identifier.mlModelLabel()])
             signImages.append(signImage)
         }
     }
