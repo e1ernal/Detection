@@ -22,7 +22,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar(title: "Traffic Sign Recognition",
-                           backgroundColor: .systemBackground)
+                           color: .systemBackground)
         setupActions()
         setupTableView()
     }

@@ -25,8 +25,8 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource {
 
         infoTableView.register(Cells.signInfo.getClass, forCellReuseIdentifier: Cells.signInfo.getId)
         infoTableView.register(Cells.regular.getClass, forCellReuseIdentifier: Cells.regular.getId)
-        infoTableView.alwaysBounceVertical = false
-
+        infoTableView.allowsSelection = false
+        
         signs = Signs.getSigns()
     }
 
@@ -37,9 +37,9 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return signs.count
+            return 0
         case 1:
-            return 1
+            return signs.count
         default:
             return 0
         }
@@ -47,7 +47,7 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case 0:
+        case 1:
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: Cells.signInfo.getId,
                 for: indexPath) as? SignInfoCell
@@ -59,11 +59,6 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource {
                            definition: sign.definition,
                            imageName: sign.imageName)
             return cell
-        case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: Cells.regular.getId, for: indexPath)
-            cell.textLabel?.text = "About"
-            cell.accessoryType = .disclosureIndicator
-            return cell
         default:
             return tableView.dequeueReusableCell(withIdentifier: Cells.regular.getId, for: indexPath)
         }
@@ -72,18 +67,28 @@ extension InfoVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
+            return ""
+        case 1:
             return "Recognizable road signs"
         default:
             return ""
         }
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 1 && indexPath.row == 0 {
-            let nextVC = AboutVC()
-            navigationController?.present(UINavigationController(rootViewController: nextVC),
-                                          animated: true)
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return """
+                1. Select an image that contains road signs
+                
+                2. The application will process the image and highlight all recognized road signs
+                
+                3. You can view detailed information on each recognized road sign
+                """
+        case 1:
+            return "The model will try to find these road signs in the image. If the road sign is too small, it will not be found"
+        default:
+            return ""
         }
     }
 }

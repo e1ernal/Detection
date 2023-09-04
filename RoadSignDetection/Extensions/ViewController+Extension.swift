@@ -9,12 +9,8 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func setupNavigationBar(title: String?, backgroundColor: UIColor?) {
-        if let title {
-            self.title = title
-        }
-
-        guard let color = backgroundColor else { return }
-        self.view.backgroundColor = color
+    func setupNavigationBar(title: String?, color: UIColor?) {
+        if let title { self.title = title }
+        if let color { self.view.backgroundColor = color }
     }
 }

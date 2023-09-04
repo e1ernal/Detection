@@ -18,7 +18,7 @@ class DetailedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar(title: "Detailed information",
-                           backgroundColor: .systemBackground)
+                           color: .systemBackground)
         drawSignImages()
         setupTableView()
     }

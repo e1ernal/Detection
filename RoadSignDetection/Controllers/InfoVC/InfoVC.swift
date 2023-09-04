@@ -13,8 +13,8 @@ class InfoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar(title: "Information",
-                           backgroundColor: .systemBackground)
+        setupNavigationBar(title: "How to use",
+                           color: .systemBackground)
         setupTableView()
     }
 }
