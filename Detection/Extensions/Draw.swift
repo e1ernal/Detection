@@ -5,11 +5,10 @@
 //  Created by e1ernal on 19.06.2023.
 //
 
-import Foundation
 import UIKit
 
-/// Draw rectangle on image
 enum Draw {
+    /// Draw rectangle on image
     static func rectangles(image: UIImage, boundingBoxes: [CGRect], texts: [String]) -> UIImage {
         let imageSize = image.size
         let scale: CGFloat = 0

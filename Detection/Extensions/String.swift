@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    /// Translates results of MLModel from russian to english
+    /// Translates results of MLModel from Russian to English
     /// - Returns: English named label
     func mlModelLabel() -> String {
         switch self {

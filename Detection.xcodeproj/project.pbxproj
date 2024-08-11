@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		ED12BA562C68A54D009635DE /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED12BA552C68A54D009635DE /* ObjectDetector.mlmodel */; };
-		ED56A7FE2A489A8300F14173 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7FD2A489A8300F14173 /* ViewController+Extension.swift */; };
-		ED56A8002A489AC900F14173 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7FF2A489AC900F14173 /* String+Extension.swift */; };
-		ED56A8022A489B4900F14173 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A8012A489B4900F14173 /* Array+Extension.swift */; };
+		ED56A7FE2A489A8300F14173 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7FD2A489A8300F14173 /* UIViewController.swift */; };
+		ED56A8002A489AC900F14173 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7FF2A489AC900F14173 /* String.swift */; };
+		ED56A8022A489B4900F14173 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A8012A489B4900F14173 /* Array.swift */; };
 		ED9303642A42E59D00169BD1 /* DetailedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9303632A42E59D00169BD1 /* DetailedVC.swift */; };
 		ED9303662A42E78D00169BD1 /* DetailedVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9303652A42E78D00169BD1 /* DetailedVC+TableView.swift */; };
 		ED9303682A4308FB00169BD1 /* DetailedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9303672A4308FB00169BD1 /* DetailedCell.swift */; };
@@ -41,9 +41,9 @@
 
 /* Begin PBXFileReference section */
 		ED12BA552C68A54D009635DE /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetector.mlmodel; path = ../../../../../../../../Downloads/ObjectDetector.mlmodel; sourceTree = "<group>"; };
-		ED56A7FD2A489A8300F14173 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
-		ED56A7FF2A489AC900F14173 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		ED56A8012A489B4900F14173 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		ED56A7FD2A489A8300F14173 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		ED56A7FF2A489AC900F14173 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		ED56A8012A489B4900F14173 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		ED9303632A42E59D00169BD1 /* DetailedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedVC.swift; sourceTree = "<group>"; };
 		ED9303652A42E78D00169BD1 /* DetailedVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedVC+TableView.swift"; sourceTree = "<group>"; };
 		ED9303672A4308FB00169BD1 /* DetailedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCell.swift; sourceTree = "<group>"; };
@@ -260,9 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				EDF3D8272A40881700507283 /* Draw.swift */,
-				ED56A7FD2A489A8300F14173 /* ViewController+Extension.swift */,
-				ED56A7FF2A489AC900F14173 /* String+Extension.swift */,
-				ED56A8012A489B4900F14173 /* Array+Extension.swift */,
+				ED56A7FD2A489A8300F14173 /* UIViewController.swift */,
+				ED56A7FF2A489AC900F14173 /* String.swift */,
+				ED56A8012A489B4900F14173 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,15 +346,15 @@
 				EDF0D4512A3F7F8F00B2F98E /* Sections.swift in Sources */,
 				EDF0D4532A3F953C00B2F98E /* SignDetectionCell.swift in Sources */,
 				ED12BA562C68A54D009635DE /* ObjectDetector.mlmodel in Sources */,
-				ED56A7FE2A489A8300F14173 /* ViewController+Extension.swift in Sources */,
+				ED56A7FE2A489A8300F14173 /* UIViewController.swift in Sources */,
 				EDF0D4472A3F33A600B2F98E /* InfoVC.swift in Sources */,
 				EDF0D44A2A3F3BAD00B2F98E /* SignInfoCell.swift in Sources */,
 				EDBD0B442C68A0D50011E2D2 /* Reusable.swift in Sources */,
 				EDDFA9412AA60F8800D332FE /* MenuButtons.swift in Sources */,
-				ED56A8002A489AC900F14173 /* String+Extension.swift in Sources */,
+				ED56A8002A489AC900F14173 /* String.swift in Sources */,
 				EDF0D44D2A3F51CA00B2F98E /* Signs.swift in Sources */,
 				EDF0D4362A3F2FD200B2F98E /* MainVC.swift in Sources */,
-				ED56A8022A489B4900F14173 /* Array+Extension.swift in Sources */,
+				ED56A8022A489B4900F14173 /* Array.swift in Sources */,
 				EDAF5DE22A40E51B00A48A91 /* MainVC+MLModel.swift in Sources */,
 				EDF0D4322A3F2FD200B2F98E /* AppDelegate.swift in Sources */,
 				EDBD0B482C68A1290011E2D2 /* UITableView+deque.swift in Sources */,
