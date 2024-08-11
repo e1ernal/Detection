@@ -49,7 +49,7 @@
 		EDDFA93E2AA60F2400D332FE /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		EDDFA9402AA60F8800D332FE /* MenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtons.swift; sourceTree = "<group>"; };
 		EDDFA9422AA6112C00D332FE /* MenuVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+TableView.swift"; sourceTree = "<group>"; };
-		EDF0D42E2A3F2FD200B2F98E /* RoadSignDetection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadSignDetection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF0D42E2A3F2FD200B2F98E /* Detection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Detection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF0D4312A3F2FD200B2F98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF0D4332A3F2FD200B2F98E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EDF0D4352A3F2FD200B2F98E /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		EDF0D4252A3F2FD200B2F98E = {
 			isa = PBXGroup;
 			children = (
-				EDF0D4302A3F2FD200B2F98E /* RoadSignDetection */,
+				EDF0D4302A3F2FD200B2F98E /* Detection */,
 				EDF0D42F2A3F2FD200B2F98E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,12 +142,12 @@
 		EDF0D42F2A3F2FD200B2F98E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDF0D42E2A3F2FD200B2F98E /* RoadSignDetection.app */,
+				EDF0D42E2A3F2FD200B2F98E /* Detection.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EDF0D4302A3F2FD200B2F98E /* RoadSignDetection */ = {
+		EDF0D4302A3F2FD200B2F98E /* Detection */ = {
 			isa = PBXGroup;
 			children = (
 				EDF0D44B2A3F51B800B2F98E /* Model */,
@@ -160,7 +160,7 @@
 				EDF0D43C2A3F2FD300B2F98E /* LaunchScreen.storyboard */,
 				EDF0D43F2A3F2FD300B2F98E /* Info.plist */,
 			);
-			path = RoadSignDetection;
+			path = Detection;
 			sourceTree = "<group>";
 		};
 		EDF0D4452A3F305800B2F98E /* Controllers */ = {
@@ -211,22 +211,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EDF0D42D2A3F2FD200B2F98E /* RoadSignDetection */ = {
+		EDF0D42D2A3F2FD200B2F98E /* Detection */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDF0D4422A3F2FD300B2F98E /* Build configuration list for PBXNativeTarget "RoadSignDetection" */;
+			buildConfigurationList = EDF0D4422A3F2FD300B2F98E /* Build configuration list for PBXNativeTarget "Detection" */;
 			buildPhases = (
 				EDF0D42A2A3F2FD200B2F98E /* Sources */,
 				EDF0D42B2A3F2FD200B2F98E /* Frameworks */,
 				EDF0D42C2A3F2FD200B2F98E /* Resources */,
-				ED1308012A485181008A9F63 /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RoadSignDetection;
+			name = Detection;
 			productName = RoadSignDetection;
-			productReference = EDF0D42E2A3F2FD200B2F98E /* RoadSignDetection.app */;
+			productReference = EDF0D42E2A3F2FD200B2F98E /* Detection.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -237,14 +236,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					EDF0D42D2A3F2FD200B2F98E = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = EDF0D4292A3F2FD200B2F98E /* Build configuration list for PBXProject "RoadSignDetection" */;
+			buildConfigurationList = EDF0D4292A3F2FD200B2F98E /* Build configuration list for PBXProject "Detection" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -257,7 +256,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDF0D42D2A3F2FD200B2F98E /* RoadSignDetection */,
+				EDF0D42D2A3F2FD200B2F98E /* Detection */,
 			);
 		};
 /* End PBXProject section */
@@ -273,27 +272,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		ED1308012A485181008A9F63 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDF0D42A2A3F2FD200B2F98E /* Sources */ = {
@@ -380,6 +358,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -440,6 +419,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -467,7 +447,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6AB7TG5AU6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RoadSignDetection/Info.plist;
+				INFOPLIST_FILE = Detection/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -477,7 +457,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = e1ernal.RoadSignDetection;
+				PRODUCT_BUNDLE_IDENTIFIER = e1ernal.Detection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -494,7 +474,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6AB7TG5AU6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RoadSignDetection/Info.plist;
+				INFOPLIST_FILE = Detection/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -504,7 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = e1ernal.RoadSignDetection;
+				PRODUCT_BUNDLE_IDENTIFIER = e1ernal.Detection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -515,7 +495,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EDF0D4292A3F2FD200B2F98E /* Build configuration list for PBXProject "RoadSignDetection" */ = {
+		EDF0D4292A3F2FD200B2F98E /* Build configuration list for PBXProject "Detection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDF0D4402A3F2FD300B2F98E /* Debug */,
@@ -524,7 +504,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDF0D4422A3F2FD300B2F98E /* Build configuration list for PBXNativeTarget "RoadSignDetection" */ = {
+		EDF0D4422A3F2FD300B2F98E /* Build configuration list for PBXNativeTarget "Detection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDF0D4432A3F2FD300B2F98E /* Debug */,
