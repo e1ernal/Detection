@@ -21,8 +21,7 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationBar(title: "Traffic Sign Recognition",
-                           color: .systemBackground)
+        configure(title: "Detection")
         setupActions()
         setupTableView()
     }

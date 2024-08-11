@@ -8,8 +8,8 @@
 import UIKit
 
 extension UIViewController {
-    func setupNavigationBar(title: String?, color: UIColor?) {
-        if let title { self.title = title }
-        if let color { self.view.backgroundColor = color }
+    func configure(title: String = "", color: UIColor = .systemBackground) {
+        self.title = title
+        self.view.backgroundColor = color
     }
 }

@@ -156,8 +156,8 @@
 		EDBD0B3F2C689E170011E2D2 /* Application Layer */ = {
 			isa = PBXGroup;
 			children = (
-				EDF0D43A2A3F2FD300B2F98E /* Assets.xcassets */,
 				EDF0D4312A3F2FD200B2F98E /* AppDelegate.swift */,
+				EDF0D43A2A3F2FD300B2F98E /* Assets.xcassets */,
 				EDF0D43F2A3F2FD300B2F98E /* Info.plist */,
 			);
 			path = "Application Layer";
@@ -259,10 +259,10 @@
 		EDF3D8182A4084C600507283 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EDF3D8272A40881700507283 /* Draw.swift */,
-				ED56A7FD2A489A8300F14173 /* UIViewController.swift */,
-				ED56A7FF2A489AC900F14173 /* String.swift */,
 				ED56A8012A489B4900F14173 /* Array.swift */,
+				EDF3D8272A40881700507283 /* Draw.swift */,
+				ED56A7FF2A489AC900F14173 /* String.swift */,
+				ED56A7FD2A489A8300F14173 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

@@ -13,8 +13,7 @@ class MenuVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar(title: "Menu",
-                           color: .systemBackground)
+        configure(title: "Menu")
         setupTableView()
     }
 }
