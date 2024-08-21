@@ -7,18 +7,18 @@
 
 import UIKit
 
-final class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - Public Properties
     
     // MARK: - Private Properties
-    let data: Settings
-    lazy var menuTableView = UITableView(frame: .zero, style: .insetGrouped)
-//    var menuView: UIView
+    let settingsData: SettingsData
+    var settingsView: SettingsView
     
     // MARK: - Initialization
     init() {
         // Init optional properties
-        data = Settings()
+        settingsData = SettingsData()
+        settingsView = SettingsView()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,18 +31,47 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure(title: "Settings")
-        setupTableView()
+        settingsView.configure(delegate: self, dataSource: self)
     }
     
-//    override func loadView() {
-//        self.view = UIView()
-//    }
+    override func loadView() {
+        self.view = settingsView
+    }
     
     // MARK: - Actions
     
     // MARK: - Public Methods
     
     // MARK: - Private Methods
+    
+    // MARK: - Protocols
+    // UITableViewDataSource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return settingsData.sections.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settingsData.sections[section].rows.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = settingsData.sections[indexPath.section].rows[indexPath.row]
+        let cell = tableView.dequeue(SettingsCell.self, for: indexPath)
+        cell.configure(title: row)
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let nextVC: UIViewController
+        switch indexPath.row {
+        case 0:
+            nextVC = InfoViewController()
+        default:
+            nextVC = AboutViewController()
+        }
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
     
     // MARK: - Deinitialization
     deinit { print("Deinit \(String(describing: SettingsViewController.self))") }

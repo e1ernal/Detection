@@ -8,9 +8,11 @@
 import Foundation
 
 struct SettingsData {
-    let sections: [SettingsSection]
+    let sections: [SettingsDataSection]
     
     init() {
-        self.sections = [SettingsSection.faqSection()]
+        self.sections = [
+            SettingsDataSection(rows: ["Information", "About"])
+        ]
     }
 }

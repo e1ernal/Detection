@@ -11,11 +11,7 @@ final class InfoView: UIView {
     // MARK: - Public Properties
     
     // MARK: - Private Properties
-    private var infoTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        return tableView
-    }()
+    private var infoTableView = UITableView(frame: .zero, style: .insetGrouped)
     
     // MARK: - Initialization
     override init(frame: CGRect) {

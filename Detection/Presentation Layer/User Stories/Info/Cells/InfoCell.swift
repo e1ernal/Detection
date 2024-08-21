@@ -18,7 +18,6 @@ final class InfoCell: TableViewCell {
         label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = .secondaryLabel
         label.text = "0"
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -27,7 +26,6 @@ final class InfoCell: TableViewCell {
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .label
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     

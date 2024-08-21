@@ -10,9 +10,3 @@ import Foundation
 struct SettingsDataSection {
     let rows: [String]
 }
-
-extension SettingsDataSection {
-    static func faqSection() -> SettingsDataSection {
-        SettingsDataSection(rows: ["How to use", "About"])
-    }
-}

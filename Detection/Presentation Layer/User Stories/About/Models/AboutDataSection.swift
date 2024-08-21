@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct AboutDataSection {
+    let title: String
+    let row: String
+}

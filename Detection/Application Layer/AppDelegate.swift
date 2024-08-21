@@ -21,8 +21,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func configure(_ window: UIWindow) {
-        let viewController = MainVC()
+        let viewController = DetectionViewController()
         let navigationController = UINavigationController()
+        navigationController.navigationBar.tintColor = .label
         navigationController.viewControllers = [viewController]
         self.window = window
         self.window?.rootViewController = navigationController

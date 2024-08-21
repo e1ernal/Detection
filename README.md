@@ -1,26 +1,4 @@
-# RoadSignDetection
-### Contents
-- [Description](#description)
-- [Features](#features)
-- [Interface](#interface)
-- [Detailed information](#detailed-information)
-   - [Goal of the work](#goal-of-the-work)
-   - [Initial data](#initial-data)
-   - [Data collection](#data-collection)
-   - [Data preparation](#data-preparation)
-   - [Model Training](#model-training)
-   - [iOS App](#ios-app)
-
-## Description
-## Features
-## Interface
-<p align="center">
-    <img src="Media/main.png" width="300">
-    <img src="Media/detailedInformation.png" width="300">
-    <img src="Media/information.png" width="300">
-</p>
-
-## Detailed information
+# Detection
 - ### Goal of the work
   The purpose of this work is to create an ML model and develop an iOS application for search and recognition of road signs by photo.
 - ### Initial data

@@ -8,8 +8,8 @@
 import UIKit
 
 extension UIViewController {
-    func configure(title: String = "", color: UIColor = .systemBackground) {
+    func configure(title: String? = nil, backgroundColor: UIColor? = .systemBackground) {
         self.title = title
-        self.view.backgroundColor = color
+        self.view.backgroundColor = backgroundColor
     }
 }

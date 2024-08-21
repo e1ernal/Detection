@@ -19,7 +19,6 @@ final class InfoSignCell: TableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = .label
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -29,19 +28,13 @@ final class InfoSignCell: TableViewCell {
         label.textAlignment = .justified
         label.numberOfLines = 0
         label.textColor = .secondaryLabel
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let signImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    private let signImageView = UIImageView()
     
     private lazy var textStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
-        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         return stack
     }()
