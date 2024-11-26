@@ -21,7 +21,8 @@ struct SettingsSection {
 
 extension SettingsSection {
     static func sectionFAQ() -> SettingsSection {
-        return SettingsSection(header: "FAQ", rows: ["How to use the app", "Recognizable objects"])
+        return SettingsSection(header: "FAQ",
+                               rows: ["How to use the app", "Recognizable objects"])
     }
     
     static func sectionAbout() -> SettingsSection {

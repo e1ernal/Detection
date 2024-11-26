@@ -11,12 +11,10 @@ final class AboutCell: TableViewCell {
     // MARK: - Public Properties
     
     // MARK: - Private Properties
-    private let spacing: CGFloat = 10
-    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .label
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = .subtitle
         label.numberOfLines = 0
         label.textAlignment = .justified
         return label
@@ -24,14 +22,16 @@ final class AboutCell: TableViewCell {
     
     override func configureView() {
         addSubview(titleLabel)
+        
+        selectionStyle = .none
     }
     
     override func configureConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: spacing),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -spacing),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: spacing),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -spacing)
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: .spacing),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -.spacing),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: .spacing),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -.spacing)
         ])
     }
     

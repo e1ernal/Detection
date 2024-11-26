@@ -8,4 +8,3 @@
 protocol DetectionRowProtocol {
     var type: DetectionRowType { get }
 }
-

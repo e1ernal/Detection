@@ -8,17 +8,18 @@
 import Foundation
 
 struct HowToUseData {
-    let sections: [HowToUseDataSection]
+    let sections: [HowToUseSection]
     
-    init(sections: [HowToUseDataSection]) {
+    init(sections: [HowToUseSection]) {
         self.sections = sections
     }
 }
 
 extension HowToUseData {
     static func configure() -> HowToUseData {
-        let sectionHowToUse = HowToUseDataSection.sectionHowToUse()
+        let section1 = HowToUseSection.sectionHowToUse()
+        let sections = [section1]
         
-        return HowToUseData(sections: [sectionHowToUse])
+        return .init(sections: sections)
     }
 }

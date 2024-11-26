@@ -7,10 +7,10 @@
 
 struct HowToUseSection {
     let header: String?
-    let rows: [HowToUseDataRow]
+    let rows: [HowToUseRow]
     let footer: String?
     
-    init(header: String? = nil, rows: [HowToUseDataRow], footer: String? = nil) {
+    init(header: String? = nil, rows: [HowToUseRow], footer: String? = nil) {
         self.header = header
         self.rows = rows
         self.footer = footer
@@ -19,9 +19,9 @@ struct HowToUseSection {
 
 extension HowToUseSection {
     static func sectionHowToUse() -> HowToUseSection {
-        let row1 = HowToUseDataRow.row1()
-        let row2 = HowToUseDataRow.row2()
-        let row3 = HowToUseDataRow.row3()
+        let row1 = HowToUseRow.row1()
+        let row2 = HowToUseRow.row2()
+        let row3 = HowToUseRow.row3()
         
         let rows = [row1, row2, row3]
         

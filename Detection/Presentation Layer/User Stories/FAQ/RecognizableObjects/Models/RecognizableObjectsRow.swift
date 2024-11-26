@@ -5,6 +5,7 @@
 //  Created by e1ernal on 20.11.2024.
 //
 
+#warning("Заменить этот тип данных на Sign")
 struct RecognizableObjectsRow {
     let title: String
     let subtitle: String

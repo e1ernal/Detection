@@ -30,7 +30,7 @@ enum Draw {
             UIRectFillUsingBlendMode(rectangle, CGBlendMode.normal)
 
             let textRectangle = CGRect(x: xBox - 100,
-                                       y: yBox - 50,
+                                       y: yBox - 10,
                                        width: width + 200,
                                        height: 100)
 
@@ -42,7 +42,7 @@ enum Draw {
                 NSAttributedString.Key.foregroundColor: UIColor.black,
                 NSAttributedString.Key.backgroundColor: UIColor.white,
                 NSAttributedString.Key.paragraphStyle: paragraphStyle,
-                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: .heavy)
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .bold)
             ] as [NSAttributedString.Key: Any]
 
             text.draw(in: textRectangle, withAttributes: strokeTextAttributes)

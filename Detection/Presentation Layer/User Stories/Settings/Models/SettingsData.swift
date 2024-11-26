@@ -8,11 +8,18 @@
 import Foundation
 
 struct SettingsData {
-    let sections: [SettingsDataSection]
+    let sections: [SettingsSection]
     
-    init() {
-        self.sections = [
-            SettingsDataSection(rows: ["Information", "About"])
-        ]
+    init(sections: [SettingsSection]) {
+        self.sections = sections
+    }
+}
+
+extension SettingsData {
+    static func configure() -> SettingsData {
+        let sectionFAQ = SettingsSection.sectionFAQ()
+        let sectionAbout = SettingsSection.sectionAbout()
+        
+        return SettingsData(sections: [sectionFAQ, sectionAbout])
     }
 }

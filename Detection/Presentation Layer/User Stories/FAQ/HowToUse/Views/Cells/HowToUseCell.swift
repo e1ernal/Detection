@@ -11,28 +11,17 @@ final class HowToUseCell: TableViewCell {
     // MARK: - Public Properties
     
     // MARK: - Private Properties
-    private let spacing: CGFloat = 10
-    
     private let numberLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = .title
         label.textColor = .secondaryLabel
         label.text = "0"
         return label
     }()
     
-    private let subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13)
-        label.textAlignment = .justified
-        label.numberOfLines = 0
-        label.textColor = .secondaryLabel
-        return label
-    }()
-    
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = .subtitle
         label.textColor = .label
         label.numberOfLines = 0
         return label
@@ -43,19 +32,19 @@ final class HowToUseCell: TableViewCell {
         contentView.addSubview(titleLabel)
         
         self.selectionStyle = .none
-        separatorInset.left = 2 * spacing + numberLabel.intrinsicContentSize.width
+        separatorInset.left = 2 * .spacing + numberLabel.intrinsicContentSize.width
     }
     
     override func configureConstraints() {
         NSLayoutConstraint.activate([
-            numberLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: spacing),
-            numberLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -spacing),
-            numberLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: spacing),
+            numberLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .spacing),
+            numberLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -.spacing),
+            numberLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .spacing),
             
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: spacing),
-            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -spacing),
-            titleLabel.leadingAnchor.constraint(equalTo: numberLabel.trailingAnchor, constant: spacing),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -spacing)
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .spacing),
+            titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -.spacing),
+            titleLabel.leadingAnchor.constraint(equalTo: numberLabel.trailingAnchor, constant: .spacing),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.spacing)
         ])
     }
     

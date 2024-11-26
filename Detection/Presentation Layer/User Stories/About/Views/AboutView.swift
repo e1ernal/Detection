@@ -21,7 +21,6 @@ final class AboutView: UIView {
         addSubview(aboutTableView)
         
         aboutTableView.register(AboutCell.self, forCellReuseIdentifier: AboutCell.reuseIdentifier)
-        aboutTableView.allowsSelection = false
     }
     
     @available(*, unavailable)

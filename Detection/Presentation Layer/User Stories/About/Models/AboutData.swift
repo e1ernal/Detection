@@ -7,20 +7,21 @@
 
 import Foundation
 
+#warning("переделать")
 struct AboutData {
-    let sections: [AboutDataSection]
+    let sections: [AboutSection]
     
     init() {
         self.sections = [
-            AboutDataSection(title: "Goal of the work",
+            AboutSection(title: "Goal of the work",
                              row: """
                             The purpose of this work is to create an ML model and develop an iOS application for search and recognition of road signs by photo.
                             """),
-            AboutDataSection(title: "Initial data",
+            AboutSection(title: "Initial data",
                              row: """
                             The data for training the model was collected manually using search results and own photos taken outside in different weather conditions and under different lighting conditions.
                             """),
-            AboutDataSection(title: "Data collection",
+            AboutSection(title: "Data collection",
                              row: """
                             When collecting data for image classification, I was guided by the following recommendations from Apple:
                             
@@ -36,13 +37,13 @@ struct AboutData {
                             
                             • Exclude other objects from view, especially those that you want to classify differently
                             """),
-            AboutDataSection(title: "Data preparation",
+            AboutSection(title: "Data preparation",
                              row: """
                             Data preparation was carried out using the IBM Cloud Annotations service. In this service, objects were marked on each image. The labeling was to highlight and sign a road sign on each data image.
                             
                             The result of data preparation using IBM Cloud Annotations is a JSON file containing coordinate data and the name of each marked object in the photo"
                             """),
-            AboutDataSection(title: "Model Training",
+            AboutSection(title: "Model Training",
                              row: """
                             The model was trained in the Apple Create ML program, which took a JSON file with a database of all images as input and output a model file of the form .mlmodel, which was imported into the iOS app.
 
@@ -51,7 +52,7 @@ struct AboutData {
                             
                             However, it is worth mentioning the disadvantages: the model file has a rather large size, which negatively affects the size of the entire application.
                             """),
-            AboutDataSection(title: "iOS App Development",
+            AboutSection(title: "iOS App Development",
                              row: """
                             The developed application runs under the control of the UIKit framework. When writing the program, both libraries and resources provided by the Swift language, as well as the tools of the UIKit, CoreML, Vision frameworks.
                             """)

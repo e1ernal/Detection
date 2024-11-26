@@ -11,63 +11,19 @@ final class DetectionView: UIView {
     // MARK: - Public Properties
     
     // MARK: - Private Properties
-    private let detectionImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .secondarySystemBackground
-        imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
-        imageView.isHidden = true
-        return imageView
-    }()
-    
-    var heightConstraint = NSLayoutConstraint()
-    
-    private let placeholderLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        
-        let attributedText = NSMutableAttributedString()
-        let title = "Press + to select an image"
-        let subTitle = "\nObjects in the photo must be at least 10% of the size of the image"
-        let fullText = NSMutableAttributedString(string: title + subTitle)
-        attributedText.append(fullText)
-        
-        let mainFontSizeAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .regular)]
-        let secondaryFontSizeAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13, weight: .regular)]
-        let mainColorAttribute = [NSAttributedString.Key.foregroundColor: UIColor.label]
-        let secondaryColorAttribute = [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel]
-        
-        attributedText.addAttributes(mainFontSizeAttribute, range: NSRange(location: 0, length: title.count))
-        attributedText.addAttributes(secondaryFontSizeAttribute, range: NSRange(location: title.count, length: subTitle.count))
-        attributedText.addAttributes(secondaryColorAttribute, range: NSRange(location: title.count, length: subTitle.count))
-        attributedText.addAttributes(mainColorAttribute, range: NSRange(location: 0, length: title.count))
-        
-        label.attributedText = attributedText
-        label.isHidden = false
-        return label
-        
-    }()
-    
-    private let backgroundLabelView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 10
-        view.backgroundColor = .secondarySystemBackground
-        view.isHidden = false
-        return view
-    }()
+    private var detectionTableView = UITableView(frame: .zero, style: .insetGrouped)
     
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         // Configure View
-        addSubview(detectionImageView)
-        addSubview(backgroundLabelView)
-        addSubview(placeholderLabel)
+        addSubview(detectionTableView)
         
-        heightConstraint = detectionImageView.heightAnchor.constraint(equalToConstant: 0)
+        detectionTableView.register(DetectionImageCell.self, forCellReuseIdentifier: DetectionImageCell.reuseIdentifier)
+        detectionTableView.register(DetectionSignCell.self, forCellReuseIdentifier: DetectionSignCell.reuseIdentifier)
+        detectionTableView.register(AboutCell.self, forCellReuseIdentifier: AboutCell.reuseIdentifier)
+        detectionTableView.register(DetectionCallCell.self, forCellReuseIdentifier: DetectionCallCell.reuseIdentifier)
     }
     
     @available(*, unavailable)
@@ -81,53 +37,73 @@ final class DetectionView: UIView {
         
         // Configure constraints
         NSLayoutConstraint.activate([
-            detectionImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
-            detectionImageView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            detectionImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            detectionImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            
-            placeholderLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            placeholderLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            placeholderLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6),
-            
-            backgroundLabelView.topAnchor.constraint(equalTo: placeholderLabel.topAnchor, constant: -10),
-            backgroundLabelView.bottomAnchor.constraint(equalTo: placeholderLabel.bottomAnchor, constant: 10),
-            backgroundLabelView.leadingAnchor.constraint(equalTo: placeholderLabel.leadingAnchor, constant: -10),
-            backgroundLabelView.trailingAnchor.constraint(equalTo: placeholderLabel.trailingAnchor, constant: 10),
+            detectionTableView.topAnchor.constraint(equalTo: topAnchor),
+            detectionTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            detectionTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            detectionTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
     }
     
     // MARK: - Public Actions
-    func configure(image: UIImage?, nilAnimation: Bool = false) {
-        if nilAnimation { detectionImageView.image = nil }
-        
-        guard let image else {
-            detectionImageView.isHidden = true
-            placeholderLabel.isHidden = false
-            backgroundLabelView.isHidden = false
-            return
-        }
-        
-        let height = self.bounds.size.height - 20
-        let width = self.bounds.size.width - 20
-        let imageViewHeight = min(height, image.size.height * width / image.size.width)
-        
-        heightConstraint.isActive = false
-        heightConstraint.constant = imageViewHeight
-        heightConstraint.isActive = true
-        
-        detectionImageView.isHidden = false
-        placeholderLabel.isHidden = true
-        backgroundLabelView.isHidden = true
-        
-        UIView.animate(withDuration: 0.4) {
-            self.layoutIfNeeded()
-        } completion: {_ in
-            self.detectionImageView.image = image
-        }
+    func configure(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        detectionTableView.delegate = delegate
+        detectionTableView.dataSource = dataSource
     }
     
-    // MARK: - Private Actions
+    func refresh(empty: Bool) {
+        DispatchQueue.main.async {
+            var backgroundView: UIView? = nil
+            
+            if empty {
+                let label = UILabel()
+                label.textAlignment = .center
+                label.numberOfLines = 0
+                
+                let attributedText = NSMutableAttributedString()
+                let title = "Press + to select an image"
+                let subTitle = "\nObjects in the photo must be at least 10% of the size of the image"
+                let fullText = NSMutableAttributedString(string: title + subTitle)
+                attributedText.append(fullText)
+                
+                let mainFontSizeAttribute = [NSAttributedString.Key.font: UIFont.title]
+                let secondaryFontSizeAttribute = [NSAttributedString.Key.font: UIFont.subtitle]
+                let mainColorAttribute = [NSAttributedString.Key.foregroundColor: UIColor.label]
+                let secondaryColorAttribute = [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel]
+                
+                attributedText.addAttributes(mainFontSizeAttribute, range: NSRange(location: 0, length: title.count))
+                attributedText.addAttributes(secondaryFontSizeAttribute, range: NSRange(location: title.count, length: subTitle.count))
+                attributedText.addAttributes(secondaryColorAttribute, range: NSRange(location: title.count, length: subTitle.count))
+                attributedText.addAttributes(mainColorAttribute, range: NSRange(location: 0, length: title.count))
+                
+                label.attributedText = attributedText
+                
+                let containerView = UIView()
+                containerView.layer.cornerRadius = 10
+                containerView.backgroundColor = .secondarySystemGroupedBackground
+                
+                let view = UIView()
+                view.addSubview(containerView)
+                view.addSubview(label)
+                
+                // Set constraints for the label
+                NSLayoutConstraint.activate([
+                    label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                    label.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8),
+                    
+                    containerView.topAnchor.constraint(equalTo: label.topAnchor, constant: -.spacing),
+                    containerView.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: .spacing),
+                    containerView.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: -.spacing),
+                    containerView.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: .spacing)
+                ])
+                
+                backgroundView = view
+            }
+            
+            self.detectionTableView.backgroundView = backgroundView
+            self.detectionTableView.reloadData()
+        }
+    }
     
     // MARK: - Deinitialization
     deinit { print("Deinit \(String(describing: DetectionView.self))") }

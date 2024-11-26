@@ -19,11 +19,44 @@ final class DetectionViewController: UIViewController, UIImagePickerControllerDe
     var image = UIImage()
     
     var detectionView: DetectionView
+    var detectionData: DetectionData {
+        didSet {
+            detectionView.refresh(empty: detectionData.sections.isEmpty)
+        }
+    }
+    
+    private lazy var settingsButton: UIButton = {
+        var configuration = UIButton.Configuration.filled()
+        configuration.image = UIImage(systemName: "ellipsis")
+        configuration.cornerStyle = .capsule
+        configuration.buttonSize = .medium
+        configuration.baseForegroundColor = .label
+        configuration.baseBackgroundColor = .secondarySystemGroupedBackground
+        
+        let button = UIButton(configuration: configuration)
+        button.addTarget(self, action: #selector(settingsTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var detectionButton: UIButton = {
+        var configuration = UIButton.Configuration.filled()
+        configuration.image = UIImage(systemName: "plus")
+        configuration.cornerStyle = .capsule
+        configuration.buttonSize = .medium
+        configuration.baseForegroundColor = .label
+        configuration.baseBackgroundColor = .secondarySystemGroupedBackground
+        
+        let button = UIButton(configuration: configuration)
+        button.addTarget(self, action: #selector(detectionTapped), for: .touchUpInside)
+        return button
+    }()
     
     // MARK: - Initialization
     init() {
         // Init optional properties
         detectionView = DetectionView()
+        detectionData = DetectionData()
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -37,6 +70,9 @@ final class DetectionViewController: UIViewController, UIImagePickerControllerDe
         super.viewDidLoad()
         navigationItem.configureTitleView(title: titleText, subtitle: subtitleText)
         configureNavigationBar()
+        view.backgroundColor = .systemBackground
+        detectionView.configure(delegate: self, dataSource: self)
+        detectionData = DetectionData()
     }
     
     override func loadView() {
@@ -59,18 +95,11 @@ final class DetectionViewController: UIViewController, UIImagePickerControllerDe
     }
     
     func configureNavigationBar() {
-        let settingsButton = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"),
-                                             style: .plain,
-                                             target: self,
-                                             action: #selector(settingsTapped))
+        let button1 = UIBarButtonItem(customView: settingsButton)
+        let button2 = UIBarButtonItem(customView: detectionButton)
         
-        let detectionButton = UIBarButtonItem(image: UIImage(systemName: "plus.circle.fill"),
-                                              style: .plain,
-                                              target: self,
-                                              action: #selector(detectionTapped))
-        
-        self.navigationItem.rightBarButtonItems = [settingsButton]
-        self.navigationItem.leftBarButtonItem = detectionButton
+        self.navigationItem.rightBarButtonItems = [button1]
+        self.navigationItem.leftBarButtonItem = button2
     }
     
     // MARK: - Protocols
@@ -81,9 +110,10 @@ final class DetectionViewController: UIViewController, UIImagePickerControllerDe
             result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
                 guard let image = reading as? UIImage, error == nil else { return }
                 DispatchQueue.main.async {
-                    self.detectionView.configure(image: image, nilAnimation: true)
                     self.image = image
-                    self.navigationItem.configureTitleView(title: "Detection", subtitle: "recognising", animating: true)
+                    self.navigationItem.configureTitleView(title: "Detection",
+                                                           subtitle: "recognizing",
+                                                           animating: true)
                     self.updateDetections(for: image)
                 }
                 
@@ -157,17 +187,82 @@ final class DetectionViewController: UIViewController, UIImagePickerControllerDe
     
     func drawDetections(detections: [VNRecognizedObjectObservation]) {
         for detection in detections {
+            let sign = SignData.getSign(by: detection.labels[0].identifier)
             image = Draw.rectangles(image: image,
                                     boundingBoxes: [detection.boundingBox],
-                                    texts: [detection.labels[0].identifier])
+                                    texts: [sign?.title ?? ""])
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.detectionView.configure(image: self.image)
-            self.navigationItem.configureTitleView(title: self.titleText, subtitle: "found: \(detections.count)")
+            self.navigationItem.configureTitleView(title: self.titleText, subtitle: "found \(detections.count) signs")
+            self.detectionData = Detection.configureData(image: self.image, detections: detections)
         }
+        
     }
     
     // MARK: - Deinitialization
     deinit { print("Deinit \(String(describing: DetectionViewController.self))") }
+}
+
+extension DetectionViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return detectionData.sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard section >= 0, section < detectionData.sections.count else { return 0 }
+        return detectionData.sections[section].rows.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard section >= 0, section < detectionData.sections.count else { return nil }
+        return detectionData.sections[section].header
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        guard section >= 0, section < detectionData.sections.count else { return nil }
+        return detectionData.sections[section].footer
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard indexPath.section == 0 else { return UITableView.automaticDimension }
+        
+        let row = detectionData.sections[indexPath.section].rows[indexPath.row]
+        guard let row = row as? DetectionRowImage else { return UITableView.automaticDimension }
+        
+        let image = row.image
+        let ratio = image.size.height / image.size.width
+        #warning("40?")
+        let width = tableView.rect(forSection: 0).width - 40
+        let height = min(width * ratio, width)
+        
+        return height
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = detectionData.sections[indexPath.section].rows[indexPath.row]
+        
+        switch row.type {
+        case .image:
+            let cell = tableView.dequeue(DetectionImageCell.self, for: indexPath)
+            guard let row = row as? DetectionRowImage else { return cell }
+            cell.configure(image: row.image)
+            return cell
+        case .recommendations:
+            let cell = tableView.dequeue(AboutCell.self, for: indexPath)
+            guard let row = row as? DetectionRowRecommendation else { return cell }
+            cell.configure(title: row.title)
+            return cell
+        case .sign:
+            let cell = tableView.dequeue(DetectionSignCell.self, for: indexPath)
+            guard let row = row as? DetectionRowSign else { return cell }
+            cell.configure(title: row.title, subtitle: row.subtitle, image: row.image, count: row.count)
+            return cell
+        case .call:
+            let cell = tableView.dequeue(DetectionCallCell.self, for: indexPath)
+            guard let row = row as? DetectionRowCall else { return cell }
+            cell.configure(title: row.title, subtitle: row.subtitle)
+            return cell
+        }
+    }
 }

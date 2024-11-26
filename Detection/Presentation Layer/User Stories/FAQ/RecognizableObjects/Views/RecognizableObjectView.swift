@@ -11,21 +11,20 @@ final class RecognizableObjectView: UIView {
     // MARK: - Public Properties
     
     // MARK: - Private Properties
-    private let spacing: CGFloat = 10
     private let imageHeight: CGFloat = 80
     private let imageWidth: CGFloat = 80
     
     private lazy var backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .secondarySystemBackground
-        view.layer.cornerRadius = spacing
+        view.layer.cornerRadius = .spacing
         return view
     }()
     
     private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = spacing
+        stack.spacing = .spacing
         return stack
     }()
     
@@ -37,7 +36,7 @@ final class RecognizableObjectView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = .title
         label.textColor = .label
         label.textAlignment = .center
         return label
@@ -45,7 +44,7 @@ final class RecognizableObjectView: UIView {
     
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = .subtitle
         label.textAlignment = .justified
         label.numberOfLines = 0
         label.textColor = .secondaryLabel
@@ -91,22 +90,22 @@ final class RecognizableObjectView: UIView {
         stackView.addArrangedSubview(subtitleLabel)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 2 * spacing),
-            stackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -2 * spacing),
-            stackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 2 * spacing),
-            stackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -2 * spacing),
+            stackView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 2 * .spacing),
+            stackView.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -2 * .spacing),
+            stackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 2 * .spacing),
+            stackView.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -2 * .spacing),
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            backgroundView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: -spacing),
-            backgroundView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: spacing),
-            backgroundView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: -spacing),
-            backgroundView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: spacing),
+            backgroundView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: -.spacing),
+            backgroundView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: .spacing),
+            backgroundView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: -.spacing),
+            backgroundView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: .spacing),
             
             closeButton.topAnchor.constraint(equalTo: stackView.topAnchor),
             closeButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            closeButton.widthAnchor.constraint(equalToConstant: 2 * spacing),
-            closeButton.heightAnchor.constraint(equalToConstant: 2 * spacing)
+            closeButton.widthAnchor.constraint(equalToConstant: 2 * .spacing),
+            closeButton.heightAnchor.constraint(equalToConstant: 2 * .spacing)
         ])
     }
     
