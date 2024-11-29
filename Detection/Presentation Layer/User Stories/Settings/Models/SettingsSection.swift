@@ -7,6 +7,7 @@
 
 import Foundation
 
+#warning("Сделать общую структуру для всех настроек")
 struct SettingsSection {
     let header: String?
     let rows: [String]
@@ -21,8 +22,7 @@ struct SettingsSection {
 
 extension SettingsSection {
     static func sectionFAQ() -> SettingsSection {
-        return SettingsSection(header: "FAQ",
-                               rows: ["How to use the app", "Recognizable objects"])
+        return SettingsSection(rows: ["FAQ"])
     }
     
     static func sectionAbout() -> SettingsSection {

@@ -34,6 +34,15 @@
 		ED50BF462C6A742600EB2FFA /* DetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED50BF452C6A742600EB2FFA /* DetectionView.swift */; };
 		ED56A7FE2A489A8300F14173 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A7FD2A489A8300F14173 /* UIViewController.swift */; };
 		ED56A8022A489B4900F14173 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED56A8012A489B4900F14173 /* Array.swift */; };
+		ED724ACD2CF9D63D003A641D /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED724ACC2CF9D634003A641D /* FAQViewController.swift */; };
+		ED724AD12CF9D6A1003A641D /* FAQData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED724AD02CF9D69C003A641D /* FAQData.swift */; };
+		ED724AD32CF9D709003A641D /* FAQSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED724AD22CF9D704003A641D /* FAQSection.swift */; };
+		ED724AD52CF9DA08003A641D /* FAQRowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED724AD42CF9DA06003A641D /* FAQRowProtocol.swift */; };
+		ED724AD72CF9DC27003A641D /* FAQRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED724AD62CF9DC20003A641D /* FAQRowType.swift */; };
+		ED724AD92CF9DCA6003A641D /* FAQRowQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED724AD82CF9DC9F003A641D /* FAQRowQuestion.swift */; };
+		ED724ADB2CF9DD39003A641D /* FAQRowQuestionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED724ADA2CF9DD31003A641D /* FAQRowQuestionAnswer.swift */; };
+		ED724AE12CF9E1EB003A641D /* FAQQuestionAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED724AE02CF9E1DE003A641D /* FAQQuestionAnswerCell.swift */; };
+		ED724AE32CF9E28C003A641D /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED724AE22CF9E289003A641D /* FAQView.swift */; };
 		ED8D2A1E2CEF2C4000B3B1F7 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED8D2A1D2CEF2C4000B3B1F7 /* ObjectDetector.mlmodel */; };
 		ED9616CD2C693AD300017628 /* HowToUseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9616CC2C693AD300017628 /* HowToUseCell.swift */; };
 		EDAA41312CF6419000165AA1 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAA41302CF6418D00165AA1 /* URL.swift */; };
@@ -90,6 +99,15 @@
 		ED50BF452C6A742600EB2FFA /* DetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionView.swift; sourceTree = "<group>"; };
 		ED56A7FD2A489A8300F14173 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		ED56A8012A489B4900F14173 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		ED724ACC2CF9D634003A641D /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		ED724AD02CF9D69C003A641D /* FAQData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQData.swift; sourceTree = "<group>"; };
+		ED724AD22CF9D704003A641D /* FAQSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSection.swift; sourceTree = "<group>"; };
+		ED724AD42CF9DA06003A641D /* FAQRowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQRowProtocol.swift; sourceTree = "<group>"; };
+		ED724AD62CF9DC20003A641D /* FAQRowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQRowType.swift; sourceTree = "<group>"; };
+		ED724AD82CF9DC9F003A641D /* FAQRowQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQRowQuestion.swift; sourceTree = "<group>"; };
+		ED724ADA2CF9DD31003A641D /* FAQRowQuestionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQRowQuestionAnswer.swift; sourceTree = "<group>"; };
+		ED724AE02CF9E1DE003A641D /* FAQQuestionAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionAnswerCell.swift; sourceTree = "<group>"; };
+		ED724AE22CF9E289003A641D /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		ED8D2A1D2CEF2C4000B3B1F7 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		ED9616CC2C693AD300017628 /* HowToUseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseCell.swift; sourceTree = "<group>"; };
 		EDAA41302CF6418D00165AA1 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
@@ -160,8 +178,9 @@
 		ED14D9332CEDE43B0065C81A /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
-				ED14D9412CEE0F940065C81A /* RecognizableObjects */,
-				ED14D9342CEDE4460065C81A /* HowToUse */,
+				ED724ACC2CF9D634003A641D /* FAQViewController.swift */,
+				ED724ACE2CF9D676003A641D /* View */,
+				ED724ACF2CF9D67B003A641D /* Models */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -308,6 +327,55 @@
 			path = About;
 			sourceTree = "<group>";
 		};
+		ED724ACE2CF9D676003A641D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED724AE22CF9E289003A641D /* FAQView.swift */,
+				ED724ADF2CF9E1D8003A641D /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ED724ACF2CF9D67B003A641D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED724ADE2CF9DD8D003A641D /* Row Types */,
+				ED724AD62CF9DC20003A641D /* FAQRowType.swift */,
+				ED724AD42CF9DA06003A641D /* FAQRowProtocol.swift */,
+				ED724AD22CF9D704003A641D /* FAQSection.swift */,
+				ED724AD02CF9D69C003A641D /* FAQData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED724ADD2CF9DD78003A641D /* Row Types */ = {
+			isa = PBXGroup;
+			children = (
+				EDAA41342CF647B500165AA1 /* DetectionRowCall.swift */,
+				EDEBBF212CF03FD8004B1496 /* DetectionRowSign.swift */,
+				EDEBBF1F2CF03F84004B1496 /* DetectionRowRecommendation.swift */,
+				EDEBBF1D2CF03F3E004B1496 /* DetectionRowImage.swift */,
+			);
+			path = "Row Types";
+			sourceTree = "<group>";
+		};
+		ED724ADE2CF9DD8D003A641D /* Row Types */ = {
+			isa = PBXGroup;
+			children = (
+				ED724ADA2CF9DD31003A641D /* FAQRowQuestionAnswer.swift */,
+				ED724AD82CF9DC9F003A641D /* FAQRowQuestion.swift */,
+			);
+			path = "Row Types";
+			sourceTree = "<group>";
+		};
+		ED724ADF2CF9E1D8003A641D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ED724AE02CF9E1DE003A641D /* FAQQuestionAnswerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		EDBD0B3F2C689E170011E2D2 /* Application Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +401,8 @@
 				ED50BF422C6A706200EB2FFA /* Detection */,
 				EDDFA93D2AA60F1100D332FE /* Settings */,
 				ED14D9332CEDE43B0065C81A /* FAQ */,
+				ED14D9412CEE0F940065C81A /* RecognizableObjects */,
+				ED14D9342CEDE4460065C81A /* HowToUse */,
 				ED56A7FB2A489A4600F14173 /* About */,
 			);
 			path = "User Stories";
@@ -371,10 +441,7 @@
 		EDEBBF142CF035BD004B1496 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EDAA41342CF647B500165AA1 /* DetectionRowCall.swift */,
-				EDEBBF212CF03FD8004B1496 /* DetectionRowSign.swift */,
-				EDEBBF1F2CF03F84004B1496 /* DetectionRowRecommendation.swift */,
-				EDEBBF1D2CF03F3E004B1496 /* DetectionRowImage.swift */,
+				ED724ADD2CF9DD78003A641D /* Row Types */,
 				EDEBBF1B2CF03F19004B1496 /* DetectionRowType.swift */,
 				EDEBBF192CF03E8C004B1496 /* DetectionRowProtocol.swift */,
 				EDEBBF172CF03722004B1496 /* DetectionSection.swift */,
@@ -498,6 +565,8 @@
 				EDF3D8282A40881700507283 /* Draw.swift in Sources */,
 				EDBD0B462C68A0F40011E2D2 /* TableViewCell.swift in Sources */,
 				ED14D9402CEDE6350065C81A /* HowToUseRow.swift in Sources */,
+				ED724ADB2CF9DD39003A641D /* FAQRowQuestionAnswer.swift in Sources */,
+				ED724AE12CF9E1EB003A641D /* FAQQuestionAnswerCell.swift in Sources */,
 				ED14D9482CEE104B0065C81A /* RecognizableObjectsSection.swift in Sources */,
 				ED14D9462CEE10290065C81A /* RecognizableObjectsData.swift in Sources */,
 				ED56A7FE2A489A8300F14173 /* UIViewController.swift in Sources */,
@@ -505,7 +574,10 @@
 				EDEBBF1E2CF03F45004B1496 /* DetectionRowImage.swift in Sources */,
 				ED50BF442C6A707400EB2FFA /* DetectionViewController.swift in Sources */,
 				ED14D9512CEE1C960065C81A /* RecognizableObjectsView.swift in Sources */,
+				ED724AD12CF9D6A1003A641D /* FAQData.swift in Sources */,
+				ED724AD32CF9D709003A641D /* FAQSection.swift in Sources */,
 				EDEBBF202CF03F8E004B1496 /* DetectionRowRecommendation.swift in Sources */,
+				ED724ACD2CF9D63D003A641D /* FAQViewController.swift in Sources */,
 				EDEBBF1C2CF03F22004B1496 /* DetectionRowType.swift in Sources */,
 				EDEBBF162CF0368F004B1496 /* DetectionData.swift in Sources */,
 				EDAA41312CF6419000165AA1 /* URL.swift in Sources */,
@@ -523,6 +595,9 @@
 				ED299F1E2CF4367F0084C380 /* UIFont.swift in Sources */,
 				ED299F1C2CF434D70084C380 /* CGFloat.swift in Sources */,
 				ED56A8022A489B4900F14173 /* Array.swift in Sources */,
+				ED724AD52CF9DA08003A641D /* FAQRowProtocol.swift in Sources */,
+				ED724AE32CF9E28C003A641D /* FAQView.swift in Sources */,
+				ED724AD72CF9DC27003A641D /* FAQRowType.swift in Sources */,
 				EDF0D4322A3F2FD200B2F98E /* AppDelegate.swift in Sources */,
 				ED12BA5C2C68AE9F009635DE /* SettingsData.swift in Sources */,
 				ED50BF462C6A742600EB2FFA /* DetectionView.swift in Sources */,
@@ -535,6 +610,7 @@
 				ED14D9532CEE1CD20065C81A /* RecognizableObjectView.swift in Sources */,
 				EDEBBF132CF03052004B1496 /* DetectionImageCell.swift in Sources */,
 				ED12BA5A2C68AD27009635DE /* SettingsSection.swift in Sources */,
+				ED724AD92CF9DCA6003A641D /* FAQRowQuestion.swift in Sources */,
 				ED50BF412C6A6D6700EB2FFA /* AboutView.swift in Sources */,
 				ED14D94A2CEE10570065C81A /* RecognizableObjectsRow.swift in Sources */,
 				EDEBBF2A2CF086BE004B1496 /* SignData.swift in Sources */,
