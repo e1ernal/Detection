@@ -41,7 +41,7 @@ final class Detection {
                                         footer: recommendation)
         
         // Section 3: Call
-        let row21 = DetectionRowCall(title: "Jack Sparrow", subtitle: "+7 (922) 123-45-67")
+        let row21 = DetectionRowCall(title: "Information Service", subtitle: "+7 (922) 123-45-67")
         let section3 = DetectionSection(header: "Contact", rows: [row21])
         
         // Section 4: Recognized signs
@@ -59,8 +59,23 @@ final class Detection {
                                         rows: rows4,
                                         footer: "\(detections.count) signs (\(rows4.count) unique)")
         
+        // Section 5: Tips
+        var rows5: [DetectionRowRecommendation] = []
+        for detectionLabel in detectionsLabels {
+            let recommendation = SignData.getSign(by: detectionLabel)?.tip
+            rows5.append(DetectionRowRecommendation(title: recommendation ?? ""))
+        }
+        
+        let tip1 = "Based on real user experience"
+        let tip2 = "Try to get closer to the road sign or take a picture of it from a different angle"
+        let tip = rows2.isEmpty ? tip2  : tip1
+        
+        let section5 = DetectionSection(header: "Tips",
+                                        rows: rows5,
+                                        footer: tip)
+        
         // All Sections
-        let detectionData = DetectionData(sections: [section1, section3, section2, section4])
+        let detectionData = DetectionData(sections: [section1, section3, section2, section5, section4])
         
         return detectionData
         

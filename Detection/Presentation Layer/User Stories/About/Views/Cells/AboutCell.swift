@@ -24,6 +24,7 @@ final class AboutCell: TableViewCell {
         addSubview(titleLabel)
         
         selectionStyle = .none
+        separatorInset.left = .spacing
     }
     
     override func configureConstraints() {
