@@ -32,6 +32,17 @@ final class DetectionCallCell: TableViewCell {
         return label
     }()
     
+    private let contactImageView: UIButton = {
+        var configuration = UIButton.Configuration.filled()
+        configuration.image = UIImage(systemName: "person.fill")
+        configuration.cornerStyle = .capsule
+        configuration.baseBackgroundColor = .tertiarySystemGroupedBackground
+        configuration.baseForegroundColor = .secondaryLabel
+        
+        let button = UIButton(configuration: configuration, primaryAction: nil)
+        return button
+    }()
+    
     private let callButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
         configuration.image = UIImage(systemName: "phone.fill")
@@ -57,13 +68,13 @@ final class DetectionCallCell: TableViewCell {
     private lazy var textStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
         stack.axis = .vertical
-        stack.spacing = .spacing
         return stack
     }()
     
     override func configureView() {
         contentView.addSubview(callButton)
         contentView.addSubview(messageButton)
+        contentView.addSubview(contactImageView)
         contentView.addSubview(textStackView)
         
         selectionStyle = .none
@@ -85,7 +96,14 @@ final class DetectionCallCell: TableViewCell {
             messageButton.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: .spacing),
             messageButton.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -.spacing),
             
-            textStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .spacing),
+            contactImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .spacing),
+            contactImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            contactImageView.heightAnchor.constraint(equalToConstant: imageHeight),
+            contactImageView.widthAnchor.constraint(equalToConstant: imageWidth),
+            contactImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: .spacing),
+            contactImageView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -.spacing),
+            
+            textStackView.leadingAnchor.constraint(equalTo: contactImageView.trailingAnchor, constant: .spacing),
             textStackView.trailingAnchor.constraint(equalTo: messageButton.leadingAnchor, constant: -.spacing),
             textStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .spacing),
             textStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -.spacing),
