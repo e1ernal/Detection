@@ -84,6 +84,7 @@ final class FAQViewController: UIViewController, UITableViewDelegate, UITableVie
         let footer = UITextView()
         footer.isUserInteractionEnabled = true
         footer.isEditable = false
+        footer.backgroundColor = .clear
         footer.attributedText = attributedString
 
         return footer
